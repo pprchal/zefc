@@ -2,7 +2,7 @@ package utils
 
 import (
 	"archive/zip"
-	"crypto/sha1"
+	"crypto/sha256"
 	"fmt"
 	"io"
 	"sync"
@@ -41,7 +41,7 @@ func CalculateHashForFile(f *zip.File) structs.Etalon {
 	defer fileInArchive.Close()
 	fmt.Printf("%s\n", f.Name)
 
-	sha1Hasher := sha1.New()
+	sha1Hasher := sha256.New()
 	if _, err := io.Copy(sha1Hasher, fileInArchive); err != nil {
 		panic("Cannot create SHA1 hash for file " + f.Name + ": " + err.Error())
 	}

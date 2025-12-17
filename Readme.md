@@ -46,4 +46,7 @@ profiles:
     - \.(cs|less)
 ```
 
+# changes
+17.12.2025 - move to SHA256 - even SHA1 is ok, in some cases is better to be safe
+
 Pavel Prchal, 2025
